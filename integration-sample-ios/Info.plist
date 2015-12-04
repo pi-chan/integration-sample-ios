@@ -56,5 +56,18 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>info.piyox.integration-sample-ios</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>integration-sample-ios</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

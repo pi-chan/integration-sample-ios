@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import p2_OAuth2
+import KeychainAccess
+
 
 class ViewController: UIViewController {
 
@@ -20,6 +23,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let keychain = KeychainAccess.Keychain(service: Constants.SERVICE_NAME)
+        if let accessToken = try! keychain.get(Constants.ACCESS_TOKEN) {
+            print(accessToken)
+        } else {
+            Auth.sharedInstance.oauth2?.authConfig.authorizeContext = self
+            Auth.sharedInstance.oauth2?.authorize()
+        }
+    }
 }
 
