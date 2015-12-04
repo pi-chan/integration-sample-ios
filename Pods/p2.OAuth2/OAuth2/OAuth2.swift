@@ -328,7 +328,7 @@ public class OAuth2: OAuth2Base
 		
 		// compose the URL query component
 		let comp = NSURLComponents(URL: base, resolvingAgainstBaseURL: true)
-		assert(nil != comp && "https" == comp!.scheme, "You MUST use HTTPS")
+		//assert(nil != comp && "https" == comp!.scheme, "You MUST use HTTPS")
 		
 		var urlParams = params ?? [String: String]()
 		urlParams["client_id"] = clientId
